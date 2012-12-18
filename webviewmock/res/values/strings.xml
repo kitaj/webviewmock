@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WebViewMock</string>
+    <string name="menu_settings">Settings</string>
+    <string name="submitUrlLabel">Go</string>
+    <string name="enterUrlHint">Enter URL</string>
+    <string name="settings_name">Settings</string>
+    <string name="prefs_javascript_enabled">javascriptEnabled</string>
+    <string name="prefs_title_javascript_enabled">Enable Javascript</string>
+    <string name="prefs_summary_on_javascript_enabled">enabled</string>
+    <string name="prefs_summary_off_javascript_enabled">disabled</string>
+
+</resources>
