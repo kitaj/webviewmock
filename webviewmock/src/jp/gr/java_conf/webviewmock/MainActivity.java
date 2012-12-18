@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
 	private EditText editText = null;
 	private static final String KEY_PREFS_JAVASCRIPT_ENABLED = "javascriptEnabled";
 	
-    private void prepareWebView() {
+	private void prepareWebView() {
 		webView = (WebView) findViewById(R.id.webView);
 		webView.setWebViewClient(new WebViewClient());
 	}
@@ -42,54 +42,54 @@ public class MainActivity extends Activity {
 
 	private void restoreSettings() {
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-	    boolean javascriptEnabled = prefs.getBoolean(KEY_PREFS_JAVASCRIPT_ENABLED, true);
-	    webView.getSettings().setJavaScriptEnabled(javascriptEnabled);
+		boolean javascriptEnabled = prefs.getBoolean(KEY_PREFS_JAVASCRIPT_ENABLED, true);
+		webView.getSettings().setJavaScriptEnabled(javascriptEnabled);
 	}
 
 	@Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState); 
-        setContentView(R.layout.activity_main);
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState); 
+		setContentView(R.layout.activity_main);
  
-        prepareEditText();
-    	
-    	prepareWebView();
-    	restoreSettings();
-    }
+		prepareEditText();
+
+		prepareWebView();
+		restoreSettings();
+	}
 
 	@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_main, menu);
-        return true;
-    }
-
-    @Override
-    public void onResume() {
-    	super.onResume();
-        restoreSettings();
-    }
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.activity_main, menu);
+		return true;
+	}
 
 	@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-    	Intent intent = new Intent(this, SettingsActivity.class);
-    	startActivity(intent);
-    	return true;
-    }
+	public void onResume() {
+		super.onResume();
+		restoreSettings();
+	}
 
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (event.getAction() == KeyEvent.ACTION_DOWN
-        		&& keyCode == KeyEvent.KEYCODE_BACK
-                && webView.canGoBack() == true ) {
-            webView.goBack();
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		Intent intent = new Intent(this, SettingsActivity.class);
+		startActivity(intent);
+		return true;
+	}
 
-    public void enterUrl(View view) {
-    	String url = editText.getText().toString();
-    	webView.loadUrl(url);
-    }
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (event.getAction() == KeyEvent.ACTION_DOWN
+				&& keyCode == KeyEvent.KEYCODE_BACK
+				&& webView.canGoBack() == true ) {
+			webView.goBack();
+			return true;
+		}
+		return super.onKeyDown(keyCode, event);
+	}
+
+	public void enterUrl(View view) {
+		String url = editText.getText().toString();
+		webView.loadUrl(url);
+	}
 }
