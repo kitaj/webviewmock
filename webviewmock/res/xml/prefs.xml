@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
-    <CheckBoxPreference android:title="@string/prefs_title_javascript_enabled" android:summaryOn="@string/prefs_summary_on_javascript_enabled" android:key="@string/prefs_javascript_enabled" android:summaryOff="@string/prefs_summary_off_javascript_enabled" android:selectable="true" android:enabled="true"/>
+    <CheckBoxPreference android:title="@string/prefs_title_javascript_enabled" android:summaryOn="@string/prefs_summary_on_javascript_enabled" android:key="@string/prefs_javascript_enabled" android:summaryOff="@string/prefs_summary_off_javascript_enabled" android:selectable="true" android:enabled="true" android:defaultValue="true"/>
     
 
 </PreferenceScreen>
